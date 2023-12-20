@@ -81,57 +81,6 @@
         </section>
 
 
-        <section id="testimonial">
-            <div class = "title-text">
-                <p>Testimonial</p>
-                <h1>What Client Says</h1>
-            </div>
-
-            <div class="testimonial-row">
-                <div class ="testimonial-col">
-                    <div class ="user">
-                        <img src="Barber_Shop_img/img-1.jpg">
-                        <div class ="user-info">
-                            <h4>John Nolan
-                                <i class="fa fa-twitter"></i>
-                            </h4>
-                            <small>@johnnolan</small>
-                        </div>
-                    </div>
-                    <p>This is a testimonial from the first client. 
-                        It is random and has no basis abslutely but it is used for 
-                        the sake of this demonstration.</p>
-                </div>
-                <div class ="testimonial-col">
-                    <div class ="user">
-                        <img src="Barber_Shop_img/img-2.jpg">
-                        <div class ="user-info">
-                            <h4>Lucy Chen
-                                <i class="fa fa-twitter"></i>
-                            </h4>
-                            <small>@lucychen</small>
-                        </div>
-                    </div>
-                    <p>This is a testimonial from the second client. 
-                        It is random and has no basis abslutely but it is used for 
-                        the sake of this demonstration.</p>
-                </div>
-                <div class ="testimonial-col">
-                    <div class ="user">
-                        <img src="Barber_Shop_img/img-3.jpg">
-                        <div class ="user-info">
-                            <h4>Tim Bradford
-                                <i class="fa fa-twitter"></i>
-                            </h4>
-                            <small>@timbradford</small>
-                        </div>
-                    </div>
-                    <p>This is a testimonial from the third client. 
-                        It is random and has no basis abslutely but it is used for 
-                        the sake of this demonstration.</p>
-                </div>
-            </div>
-        </section>
 
         <section id ="footer">
             <img src="Barber_Shop_img/footer-img.png" class ="footer-img">

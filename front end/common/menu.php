@@ -8,8 +8,8 @@
             <li><a href ="home.php">Home</a></li>
             <li><a href ="#feature">Features</a></li>
             <li><a href ="services.php">Services</a></li>
-            <li><a href ="#testimonial">Testimonials</a></li>
-            <li><a href ="#footer">Meet Us</a></li>
+            <li><a href ="testimonial.php">Testimonials</a></li>
+            <li><a href ="contact.php">Contact Us</a></li>
         </ul>
 
     </nav>
