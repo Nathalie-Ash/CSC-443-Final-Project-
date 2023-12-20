@@ -1,3 +1,4 @@
+<?php require_once("./front end/common/menu.php");?>
 <html>
     <head>
         <title>Barber Shop Website Design - Easy Tutorials</title>
@@ -6,11 +7,12 @@
         <meta name ="viewport" content="width = device-width, initial-scale = 1">
         <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap" rel = "stylesheet">
         <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+        <script type="text/javascript" src="backEnd/controls.js"></script>
 
     </head>
     <body>
         <section id = "banner">
-               <img src ="../Barber_Shop_img/logo.png" class = "logo">
+               <img src ="Barber_Shop_img/logo.png" class = "logo">
                <div  class="banner-text">
                 <h1>Hair Studio</h1>
                 <p>Style Your Hair is Style Your Life </p>
@@ -19,23 +21,9 @@
                     <a href ="#"><span></span>Read More</a> 
                </div> 
         </section>
-        <div id="sideNav">
-            <nav>
-                <ul>
-                    <li><a href ="#banner">Home</a></li>
-                    <li><a href ="#feature">Features</a></li>
-                    <li><a href ="front end/services.html">Services</a></li>
-                    <li><a href ="#testimonial">Testimonials</a></li>
-                    <li><a href ="#footer">Meet Us</a></li>
-                </ul>
 
-            </nav>
-        </div>
 
-        <div id ="menuBtn">
-                <img src = "../Barber_Shop_img/menu.png" id ="menu">
-        </div>
-
+      
         <section id ="feature">
             <div class = "title-text">
                 <p>Features</p>
@@ -87,7 +75,7 @@
 
                 </div>
                 <div class ="features-img">
-                    <img src ="../Barber_Shop_img/barber-man.jpg">
+                    <img src ="Barber_Shop_img/barber-man.jpg">
                 </div>
             </div>
         </section>
@@ -102,7 +90,7 @@
             <div class="testimonial-row">
                 <div class ="testimonial-col">
                     <div class ="user">
-                        <img src="../Barber_Shop_img/img-1.jpg">
+                        <img src="Barber_Shop_img/img-1.jpg">
                         <div class ="user-info">
                             <h4>John Nolan
                                 <i class="fa fa-twitter"></i>
@@ -116,7 +104,7 @@
                 </div>
                 <div class ="testimonial-col">
                     <div class ="user">
-                        <img src="../Barber_Shop_img/img-2.jpg">
+                        <img src="Barber_Shop_img/img-2.jpg">
                         <div class ="user-info">
                             <h4>Lucy Chen
                                 <i class="fa fa-twitter"></i>
@@ -130,7 +118,7 @@
                 </div>
                 <div class ="testimonial-col">
                     <div class ="user">
-                        <img src="../Barber_Shop_img/img-3.jpg">
+                        <img src="Barber_Shop_img/img-3.jpg">
                         <div class ="user-info">
                             <h4>Tim Bradford
                                 <i class="fa fa-twitter"></i>
@@ -146,7 +134,7 @@
         </section>
 
         <section id ="footer">
-            <img src="../Barber_Shop_img/footer-img.png" class ="footer-img">
+            <img src="Barber_Shop_img/footer-img.png" class ="footer-img">
             <div class = "title-text">
                 <p>Contact</p>
                 <h1>Visit Shop Today</h1>
@@ -175,29 +163,7 @@
 
         </section>
 
-        <script>
-            var menuBtn = document.getElementById("menuBtn");
-            var sideNav = document.getElementById("sideNav");
-            var menu = document.getElementById("menu");
-    
-            sideNav.style.right = "-250px";
-            menuBtn.onclick = function(){
-                if(sideNav.style.right == "-250px"){
-                    sideNav.style.right="0";
-                    menu.src = "./Barber_Shop_img/close.png";
-                }else{
-                    sideNav.style.right = "-250px";
-                    menu.src = "./Barber_Shop_img/menu.png";
-                }
-    
 
-                // All animations will take exactly 500ms
-var scroll = new SmoothScroll('a[href*="#"]', {
-	speed: 1000,
-	speedAsDuration: true
-});
-            }
-        </script>
     </body>
 
 </html>
