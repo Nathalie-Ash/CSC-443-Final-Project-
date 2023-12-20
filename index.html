@@ -598,10 +598,51 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 
                     // Remove event from text input
                     $('#new-event').val('')
-                })
-            })
+              }
+
+                    // Initialize events when the DOM is ready
+                    $(document).ready(function () {
+                        // Add new event
+                        $('#add-new-event').on('click', function () {
+                            var title = $('#new-event').val();
+                            var color = $('#color-chooser li a.active').attr('class').replace('text-', '');
+
+                            // Use AJAX to send data to the PHP script
+                            $.ajax({
+                                type: 'POST',
+                                url: 'create_event.php', // Path to your PHP script
+                                data: {
+                                    title: title,
+                                    color: color
+                                },
+                                success: function (response) {
+                                    // Handle the response from the server
+                                    var data = JSON.parse(response);
+                                    if (data.status === 'success') {
+                                        // Event created successfully
+                                        // You can update the calendar or show a success message
+                                        alert(data.message);
+                                    } else {
+                                        // Error in creating the event
+                                        alert(data.message);
+                                    }
+                                },
+                                error: function () {
+                                    // Handle AJAX errors
+                                    alert('Error connecting to the server');
+                                }
+                            });
+
+                            // Reset input field
+                            $('#new-event').val('');
+                        });
+                    });
+
+                });
+            });
 
         </script>
+        <script src="../https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     </body>
 
