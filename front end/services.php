@@ -16,7 +16,11 @@
         <div class="title-text">
             <p>Services</p>
             <h1>We provide Better</h1>
+            <h4 style="padding-top: 20px;">
+        Click on our services to book an online appointmnet at your own convenience.
+</h4>
         </div>
+        
         <div class="service-box">
             <a href="prices.php" class="single-service">
                 <img src="../Barber_Shop_img/pic-1.jpg">

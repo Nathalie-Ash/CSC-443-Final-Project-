@@ -636,10 +636,10 @@ pre code {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-right: 50px;
-    margin-left: 50px;
+  
     width: 100%;
     align-items: center;
+    justify-content: center;
 }
 
 .no-gutters {
