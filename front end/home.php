@@ -19,8 +19,8 @@
             <h1>Hair Studio</h1>
             <p>Style Your Hair is Style Your Life </p>
             <div class="banner-btn">
-                <a href="#"><span> </span>Find Out</a>
-                <a href="#"><span></span>Read More</a>
+                <a href="services.php"><span> </span>Find Out</a>
+                <a href="#feature"><span></span>Read More</a>
             </div>
     </section>
 
