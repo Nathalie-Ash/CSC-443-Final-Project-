@@ -5,6 +5,8 @@
     <!-- Include only one instance of jQuery -->
     <script src="../https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript" src="../backEnd/controls.js"></script>
+
+    <!-- Include necessary CSS files -->
     <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" integrity="sha256-H2WlGQkSoP4A18b3ZFIX2RIm53z/5GqMW+Z3LwvRitY=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
