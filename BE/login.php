@@ -3,7 +3,7 @@
 session_start();
 
 
-require_once 'path/to/your/database_connection_file.php'; // Update with the actual path
+//require_once 'path/to/your/database_connection_file.php'; // Update with the actual path
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

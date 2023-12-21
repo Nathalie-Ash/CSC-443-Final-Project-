@@ -1,6 +1,6 @@
 <?php
 
-require_once(""); /must replace with path to database
+//require_once(""); /must replace with path to database
 
 
 $firstname = htmlspecialchars($_POST["firstname"]);
