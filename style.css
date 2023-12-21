@@ -208,7 +208,7 @@ nav ul li a{
     margin-bottom: 40px;
 }
 
-.feature-icon .fa{
+.feature-icon .fa,.fa-brands{
     width: 50px;
     height: 50px;
     font-size: 30px;
@@ -398,23 +398,25 @@ color: #009688
     position: relative;
 }
 
-.footer-row{
+.footer-row {
     width: 80%;
     margin: 0 auto;
-    display: flex;
+    display: flex; /* Add display: flex; to enable Flexbox */
     justify-content: space-between;
     flex-wrap: wrap;
- 
-}
-.footer-left,.footer-right{
-    flex-basis: 45%;
-    padding: 10px;
-    margin-bottom: 20px;
 }
 
-.footer-right{
+.footer-left, .footer-right {
+    width: 48%; /* Adjust the width as needed */
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.footer-right {
     text-align: right;
 }
+
 
 
 .footer-row h1{
@@ -445,7 +447,7 @@ color: #009688
     text-align: center;
 }
 
-.social-links .fa{
+.social-links .fa-brands{
     height:40px;
     width: 40px;
     font-size: 20px;
@@ -471,7 +473,7 @@ color: #009688
 
 @media screen and (max-width: 770px){
     .footer-left,.footer-right{
-        flex-basis: 100%;
+        flex-basis: 18%;
         font-size: 14px;
     }
     .footer-img{
