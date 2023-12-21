@@ -1,42 +1,26 @@
+<?php require_once("common/menu.php");?>
 <html>
 <head>
-    <title>Barber Shop Website Design - Easy Tutorials</title>
+    <script type="text/javascript" src="../backEnd/controls.js"></script>
     <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" integrity="sha256-H2WlGQkSoP4A18b3ZFIX2RIm53z/5GqMW+Z3LwvRitY=" crossorigin="anonymous" />
     <script src="../https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI/t1iPiV6sc8ekoU5fZWfZ0MjkF+r6Zl+E/3HE4=" crossorigin="anonymous"></script>
     <script src="../https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha256-rfP5FL5P6hME2eVpPBO3j1mAj7jJ4ca4DgS2+t7fjTM=" crossorigin="anonymous"></script>
     <script src="../https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js" integrity="sha256-KJ3o98hA46wLVhnLZM3eT9z6/z5fDp+T0a6Zcf7xkCI=" crossorigin="anonymous"></script>
-
-
-    <!-- Include AdminLTE CSS -->
-    <link rel="stylesheet" href="../AdminLTE-3.2.0/dist/css/adminlte.min.css">
-
-    <!-- Include FullCalendar CSS -->
-    <link rel="stylesheet" href="../AdminLTE-3.2.0/plugins/fullcalendar/main.css">
-
-    <!-- Include dependencies (jQuery, Moment.js, FullCalendar) -->
-    <script src="../AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
-    <script src="../AdminLTE-3.2.0/plugins/moment/moment.min.js"></script>
-    <script src="../AdminLTE-3.2.0/plugins/fullcalendar/main.min.js"></script>
-    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="../css/adminlte.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../backEnd/jquery.min.js"></script>
+    <script src="../backEnd/moment.min.js"></script>
+    <script src="../backEnd/main.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../Downloads/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
-    <!-- fullCalendar -->
-    <link rel="stylesheet" href="../../Downloads/AdminLTE-3.2.0/plugins/fullcalendar/main.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../../Downloads/AdminLTE-3.2.0/dist/css/adminlte.min.css">
-    <!-- Include jQuery -->
+    <link rel="stylesheet" href=" ../css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="../https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <!-- Include jQuery UI for draggable functionality -->
     <script src="../https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-
-    <!-- Include FullCalendar -->
     <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="../https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="../https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name ="viewport" content="width = device-width, initial-scale = 1">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap" rel = "stylesheet">
@@ -44,47 +28,15 @@
 
 </head>
 <body>
-<div id="sideNav">
-    <nav>
-        <ul>
-            <li><a href ="#banner">Home</a></li>
-            <li><a href ="#feature">Features</a></li>
-            <li><a href ="#service">Services</a></li>
-            <li><a href ="#testimonial">Testimonials</a></li>
-            <li><a href ="#calendar1">Calendar</a></li>
-            <li><a href ="#footer">Meet Us</a></li>
-        </ul>
 
-    </nav>
-</div>
 
 <div id ="menuBtn">
     <img src = "Barber_Shop_img/menu.png" id ="menu">
 </div>
 <section id="calendar1">
-    <div class="title-text">
-        <p>Calendar</p>
-        <h1>Events</h1>
-    </div>
-    <!-- Content Wrapper. Contains page content -->
+
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Calendar</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Calendar</li>
-                        </ol>
-                    </div>
-                </div>
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- Main content -->
+       
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -187,38 +139,30 @@
     });
 </script>
 <!-- jQuery -->
-<script src="../../Downloads/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
+<script src="../backEnd/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="../../Downloads/AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../backEnd/bootstrap.bundle.min.js"></script>
 <!-- jQuery UI -->
-<script src="../../Downloads/AdminLTE-3.2.0/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="../backEnd/jquery-ui.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../Downloads/AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
+<script src="../backEnd/adminlte.min.js"></script>
 <!-- fullCalendar 2.2.5 -->
-<script src="../../Downloads/AdminLTE-3.2.0/plugins/moment/moment.min.js"></script>
-<script src="../../Downloads/AdminLTE-3.2.0/plugins/fullcalendar/main.js"></script>
+<script src="../backEnd/moment.min.js"></script>
+<script src="../backEnd/main.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../Downloads/AdminLTE-3.2.0/dist/js/demo.js"></script>
 <!-- Page specific script -->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/main.min.js"></script>
 <script>
     $(function () {
-
-        /* initialize the external events
-         -----------------------------------------------------------------*/
         function ini_events(ele) {
             ele.each(function () {
 
-                // create an Event Object (https://fullcalendar.io/docs/event-object)
-                // it doesn't need to have a start or end
                 var eventObject = {
                     title: $.trim($(this).text()) // use the element's text as the event title
                 }
-
-                // store the Event Object in the DOM element so we can get to it later
                 $(this).data('eventObject', eventObject)
 
-                // make the event draggable using jQuery UI
                 $(this).draggable({
                     zIndex: 1070,
                     revert: true, // will cause the event to go back to its
@@ -230,9 +174,6 @@
 
         ini_events($('#external-events div.external-event'))
 
-        /* initialize the calendar
-         -----------------------------------------------------------------*/
-        //Date for the calendar events (dummy data)
         var date = new Date()
         var d = date.getDate(),
             m = date.getMonth(),
@@ -244,9 +185,6 @@
         var containerEl = document.getElementById('external-events');
         var checkbox = document.getElementById('drop-remove');
         var calendarEl = document.getElementById('calendar');
-
-        // initialize the external events
-        // -----------------------------------------------------------------
 
         new Draggable(containerEl, {
             itemSelector: '.external-event',
@@ -267,7 +205,6 @@
                 right: 'dayGridMonth,timeGridWeek,timeGridDay'
             },
             themeSystem: 'bootstrap',
-            //Random default events
             events: [
                 {
                     title: 'All Day Event',

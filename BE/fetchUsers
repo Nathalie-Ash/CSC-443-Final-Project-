@@ -1,0 +1,38 @@
+<?php
+session_start();
+require_once 'dbconnect.php'; 
+
+class User {
+    public function fetchAll() {
+        global $pdo; 
+        $query = "SELECT id, username, email FROM user"; 
+        $stmt = $pdo->query($query);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); 
+    }
+}
+
+if (!isset($_SESSION["username"])) {
+    header("location: ../index.php");
+    exit;
+}
+
+$user = new User();
+$users = $user->fetchAll();
+
+
+echo '<div class="table">';
+echo '<div class="tbl-header">';
+echo '<div class="tbl-cell">Username</div>';
+echo '<div class="tbl-cell">Email</div>';
+echo '</div>';
+
+foreach ($users as $row) {
+    echo '<div class="tbl-row">';
+    echo '<div class="tbl-cell">' . htmlspecialchars($row['username']) . '</div>';
+    echo '<div class="tbl-cell">' . htmlspecialchars($row['email']) . '</div>';
+ 
+    echo '</div>';
+}
+
+echo '</div>';
+?>
