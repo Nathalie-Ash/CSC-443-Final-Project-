@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Barber Shop - Sign Up</title>
-    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="signup-container">
+  
+    <div class="form-container">
         <form action="../BE/sign_up.php" method="POST" class="signup-form" id="signupForm">
             <h2>Sign Up</h2>
 
@@ -31,14 +34,14 @@
             <input type="password" name="confirmPassword" required id="confirmPassword">
 
 
-            <button type="submit" class="submit-btn">Sign Up</button>
+            <button type="button" class="submit-btn">Sign Up</button>
 
         </form>
         <p>Already have an account? <a href="../index.php">Login here</a>.</p>
     </div>
 
     <script>
-        document.getElementById('signupForm').onsubmit = function() {
+        document.getElementById('signupForm').onsubmit = function () {
             var password = document.getElementById('password').value;
             var confirmPassword = document.getElementById('confirmPassword').value;
 
@@ -50,4 +53,5 @@
         };
     </script>
 </body>
+
 </html>
