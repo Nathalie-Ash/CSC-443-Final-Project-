@@ -42,6 +42,35 @@ textColor: window.getComputedStyle(eventEl, null).getPropertyValue('color'),
 }
 });
 
+
+function addNewEventToDatabase(title, start, end, backgroundColor, borderColor) {
+    // Make an AJAX request to the server to add the event to the database
+    $.ajax({
+        type: 'POST',
+        url: 'calender.php', // Update the URL to your server-side script
+        data: {
+            title: title,
+            start: start.toISOString(),
+            end: end.toISOString(),
+            backgroundColor: backgroundColor,
+            borderColor: borderColor
+        },
+        success: function (response) {
+            // Handle the response from the server (if needed)
+            console.log('Event added to the database successfully');
+        },
+        error: function () {
+            // Handle AJAX errors (if any)
+            console.error('Error adding event to the database');
+        }
+    });
+}
+
+ini_events($('#external-events div.external-event'));
+
+
+
+
 var calendar = new Calendar(calendarEl, {
 headerToolbar: {
 left: 'prev,next today',
@@ -49,27 +78,7 @@ center: 'title',
 right: 'dayGridMonth,timeGridWeek,timeGridDay'
 },
 themeSystem: 'bootstrap',
-events: [{
-title: 'All Day Event',
-start: new Date(y, m, 1),
-backgroundColor: '#f56954', //red
-borderColor: '#f56954', //red
-allDay: true
-},
-{
-title: 'Long Event',
-start: new Date(y, m, d - 5),
-end: new Date(y, m, d - 2),
-backgroundColor: '#f39c12', //yellow
-borderColor: '#f39c12' //yellow
-},
-{
-title: 'Meeting',
-start: new Date(y, m, d, 10, 30),
-allDay: false,
-backgroundColor: '#0073b7', //Blue
-borderColor: '#0073b7' //Blue
-},
+events: [
 {
 title: 'Lunch',
 start: new Date(y, m, d, 12, 0),
@@ -102,8 +111,17 @@ drop: function(info) {
 if (checkbox.checked) {
 // if so, remove the element from the "Draggable Events" list
 info.draggedEl.parentNode.removeChild(info.draggedEl);
+var title = info.draggedEl.innerText;
+    var start = info.date;
+    var end = calendar.addDuration(start, '02:00:00'); // Example: Add a duration of 2 hours
+    var backgroundColor = info.draggedEl.style.backgroundColor;
+    var borderColor = info.draggedEl.style.borderColor;
+
+    addNewEventToDatabase(title, start, end, backgroundColor, borderColor);
 }
 }
+
+    
 });
 
 calendar.render();
