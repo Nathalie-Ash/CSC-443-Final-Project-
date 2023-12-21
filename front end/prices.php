@@ -13,21 +13,16 @@
 
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
-  <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12 text-center mt-3">
-            <a href="link_to_appointment_page" class="btn btn-primary btn-lg">Book your Appointment now</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="feature">
+
+  <section id="feature">
       <div class="title-text">
         <p>Prices</p>
         <h1>Book Online</h1>
-      </div>
-
+        <section class="content" >
+        
+                <a href="calender.php" class="btn btn-primary btn-lg" style="background-color:#009688; padding-top: 0%;margin-top:0%">Book your Appointment now</a>
+          </section>
+            </div>
 
       <!-- Main content -->
       <section class="content">
