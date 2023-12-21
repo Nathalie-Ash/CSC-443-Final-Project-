@@ -53658,7 +53658,6 @@ hr {
 }
 
 
-<<<<<<< HEAD
 @media screen and (max-width: 770px) {
   .single-service {
     flex-basis: 100%;
@@ -53892,7 +53891,6 @@ hr {
   width: 90%;
 }
 }
-=======
     .col-md-3 {
         position: relative;
         width: 100%;
@@ -54124,4 +54122,3 @@ hr {
         }
     }
 }
->>>>>>> 2eeb1b0 (Update style.css)
