@@ -1,84 +1,62 @@
 <?php
-require_once 'dbconnect.php'; 
 
-class User {
-    public $username;
-    public $firstname;
-    public $lastname;
-    public $email;
-    public $password;
+require_once("var.php");
 
-    public function __construct($username, $firstname, $lastname, $email, $password) {
-        $this->username = $username;
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
-        $this->email = $email;
-        $this->password = $password;
-    }
 
-    public function save() {
-        global $pdo; 
-        $hashed_password = password_hash($this->password, PASSWORD_DEFAULT);
-        $query = "INSERT INTO user (username, fullname, email, password) VALUES (?, ?, ?, ?)";
-        $stmt = $pdo->prepare($query);
-        return $stmt->execute([$this->username, $this->firstname . ' ' . $this->lastname, $this->email, $hashed_password]);
-    }
+
+
+$user=new stdClass();
+
+$user->fullname=VarExist($_POST["fullname"]);
+$user->username=VarExist($_POST["username"]);
+$user->email=VarExist($_POST["email"]);
+$user->password=VarExist($_POST["pass"]);
+// $user->sex=VarExist($_POST["sex"]);
+$user->age=VarExist($_POST["age"]);
+// $user->language=VarExist($_POST["language"]);
+
+if (InsertUserToDBfromObjet($user)){
+    header("location:../front end/home.php");
+}else{
+    header("location:../index.php");
 }
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = htmlspecialchars($_POST["username"]);
-    $firstname = htmlspecialchars($_POST["firstname"]);
-    $lastname = htmlspecialchars($_POST["lastname"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $password = htmlspecialchars($_POST["pass"]);
-    $confirmPassword = htmlspecialchars($_POST["confirmPassword"]);
-
-    if ($password !== $confirmPassword) {
-        header("Location: sign_up.php?error=password_mismatch");
-        exit;
-    }
-
-    $user = new User($username, $firstname, $lastname, $email, $password);
-
-    if ($user->save()) {
+function InsertUserToDBfromObjet($user){
+  
+    $dbhost="127.0.0.1";
+    $dbname="bookingsystem";
+    $dbuser="root";
+    $dbpass="";
+    $db=null;
+        try {
+            $db = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);		
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    
+    
+        $query = "INSERT INTO user (`username`, `fullname`, `email`, `password`, `age`) VALUES (:username, :name, :email, :password, :age)";
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(':username', $user->username);
+        $stmt->bindParam(':name', $user->fullname);
+        $stmt->bindParam(':email', $user->email);
+        $stmt->bindParam(':password', $user->password);
+        $stmt->bindParam(':age', $user->age);
+    
+        $result = $stmt->execute();
+    if ($stmt->rowCount()>0){
         session_start();
-        $_SESSION["username"] = $user->username;
-        header("Location: index.php");
-    } else {
-        header("Location: sign_up.php?error=registration_failed");
+        $_SESSION["id"]=$db->lastInsertId();
+        $_SESSION["username"]=$user->username;
+        return true;
+    }else{
+        return false;
     }
-
-
-$firstname = htmlspecialchars($_POST["firstname"]);
-$lastname = htmlspecialchars($_POST["lastname"]);
-$email = htmlspecialchars($_POST["email"]);
-$password = htmlspecialchars($_POST["pass"]);
-$sex = htmlspecialchars($_POST["sex"]);
-$ageGroup = htmlspecialchars($_POST["ageGroup"]);
-$language = htmlspecialchars($_POST["language"]);
-
-
-$hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-
-$query = "INSERT INTO tbl_users (firstname, lastname, email, password, sex, age_group, language) VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-
-$stmt = $db->prepare($query);
-
-
-if ($stmt->execute([$firstname, $lastname, $email, $hashed_password, $sex, $ageGroup, $language])) {
-   
-    session_start();
-    $_SESSION["username"] = $email;
-
-   
-    header("Location: index.php");
-
-} else {
-    header("Location: sign_up.php");
-    exit;
 }
+
+function InsertUserToDBfromArray($user){
+    print_r($user);
 }
 ?>
