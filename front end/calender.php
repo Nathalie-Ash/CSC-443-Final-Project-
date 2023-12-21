@@ -1,42 +1,41 @@
 <?php require_once("common/menu.php");?>
 <html>
 <head>
+    <!-- Include only one instance of jQuery -->
+    <script src="../https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript" src="../backEnd/controls.js"></script>
+
+    <!-- Include necessary CSS files -->
     <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" integrity="sha256-H2WlGQkSoP4A18b3ZFIX2RIm53z/5GqMW+Z3LwvRitY=" crossorigin="anonymous" />
-    <script src="../https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI/t1iPiV6sc8ekoU5fZWfZ0MjkF+r6Zl+E/3HE4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/adminlte.min.css">
+
+    <!-- Include necessary JS files -->
     <script src="../https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha256-rfP5FL5P6hME2eVpPBO3j1mAj7jJ4ca4DgS2+t7fjTM=" crossorigin="anonymous"></script>
     <script src="../https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js" integrity="sha256-KJ3o98hA46wLVhnLZM3eT9z6/z5fDp+T0a6Zcf7xkCI=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/adminlte.min.css">
+
+    <!-- Include your custom CSS and JS files -->
     <link rel="stylesheet" href="../css/main.css">
+    <link href="../https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap" rel="stylesheet">
+    <script src="../https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="../backEnd/jquery.min.js"></script>
     <script src="../backEnd/moment.min.js"></script>
     <script src="../backEnd/main.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <link rel="stylesheet" href=" ../css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="../https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="../https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="../https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name ="viewport" content="width = device-width, initial-scale = 1">
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap" rel = "stylesheet">
-    <script src="../https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 
 </head>
 <body>
-
-
 <div id ="menuBtn">
-    <img src = "Barber_Shop_img/menu.png" id ="menu">
+    <img src = "../Barber_Shop_img/menu.png" id ="menu">
 </div>
 <section id="calendar1">
+        <div class="title-text">
+            <p>Calendar</p>
+            <h1>Events</h1>
+        </div>
 
     <div class="content-wrapper">
-       
+
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -49,11 +48,11 @@
                                 <div class="card-body">
                                     <!-- the events -->
                                     <div id="external-events">
-                                        <div class="external-event bg-success">Lunch</div>
-                                        <div class="external-event bg-warning">Go home</div>
-                                        <div class="external-event bg-info">Do homework</div>
-                                        <div class="external-event bg-primary">Work on UI design</div>
-                                        <div class="external-event bg-danger">Sleep tight</div>
+                                        <div class="external-event bg-success">Hair Styling</div>
+                                        <div class="external-event bg-warning">Beard Trimming</div>
+                                        <div class="external-event bg-info">Hair Cut</div>
+                                        <div class="external-event bg-primary">Dry Shampoo</div>
+                                        <!--<div class="external-event bg-danger"></div>-->
                                         <div class="checkbox">
                                             <label for="drop-remove">
                                                 <input type="checkbox" id="drop-remove">
@@ -115,7 +114,7 @@
 </section>
 
 <!-- Include AdminLTE JS -->
-<script src="../AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
+<script src="../../AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
 
 <!-- Initialize FullCalendar -->
 <script>
@@ -150,9 +149,9 @@
 <script src="../backEnd/moment.min.js"></script>
 <script src="../backEnd/main.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../Downloads/AdminLTE-3.2.0/dist/js/demo.js"></script>
+<script src="../../AdminLTE-3.2.0/dist/js/demo.js"></script>
 <!-- Page specific script -->
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/main.min.js"></script>
+<script src="../https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/main.min.js"></script>
 <script>
     $(function () {
         function ini_events(ele) {
@@ -280,11 +279,15 @@
             })
         })
         $('#add-new-event').click(function (e) {
-            e.preventDefault()
+            e.preventDefault();
             // Get value and make sure it is not null
-            var val = $('#new-event').val()
+            var val = $('#new-event').val();
+            var activeColorElement = $('#color-chooser li a.active');
+
+            // Check if there is an active color element and retrieve the color
+            var color = activeColorElement.length > 0 ? activeColorElement.attr('class').replace('text-', '') : '';
             if (val.length == 0) {
-                return
+                return;
             }
 
             // Create events
@@ -294,7 +297,7 @@
                     'background-color': currColor,
                     'border-color': currColor,
                     'color': '#fff'
-                }).addClass('external-event')
+                }).addClass('external-event');
                 // Edit button
                 var editButton = $('<button class="btn btn-sm btn-info edit-event">Edit</button>');
                 editButton.on('click', function () {
@@ -322,11 +325,13 @@
                 // Remove event from text input
                 $('#new-event').val('')
             }
+            createEvent(val, color);
 
             // Initialize events when the DOM is ready
             $(document).ready(function () {
+
                 // Add new event
-                $('#add-new-event').on('click', function () {
+                $('#add-new-event').on('click',function () {
                     var title = $('#new-event').val();
                     var color = $('#color-chooser li a.active').attr('class').replace('text-', '');
 
@@ -365,4 +370,3 @@
     });
 
 </script>
-<script src="../https://code.jquery.com/jquery-3.6.4.min.js"></script>
