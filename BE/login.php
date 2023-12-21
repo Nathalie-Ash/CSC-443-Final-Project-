@@ -1,9 +1,9 @@
 <?php
 
 $dbhost="127.0.0.1";
-$dbname="db_csc443_eshop";
+$dbname="bookingsystem";
 $dbuser="root";
-$dbpass="root";
+$dbpass="";
 $db=null;
     try {
 		$db = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);		
@@ -25,7 +25,7 @@ $db=null;
         $row = $stmt->fetch();
         $id=$row["id"];
         $_SESSION["id"]=$id;
-        $_SESSION["username"]=$un;
+        $_SESSION["username"]=$username;
         header("location:../front end/home.php");
     }else{
         header("location:../index.php");
