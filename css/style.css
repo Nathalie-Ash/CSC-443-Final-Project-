@@ -640,3 +640,55 @@ hr {
     top: 25%;
   }
 }
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.form-container h2 {
+  color: #009688;
+  margin-bottom: 20px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-container label {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.form-container input[type="button"],
+.form-container input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container input[type="button"]:hover,
+.form-container input[type="submit"]:hover {
+  background-color: #00796b;
+}
+
+@media screen and (max-width: 770px) {
+.signup-container {
+  width: 90%;
+}
+}

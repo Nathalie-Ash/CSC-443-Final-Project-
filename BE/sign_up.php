@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["username"] = $email;
 
 
-        header("Location: index.php");
+        header("Location: ../index.php");
     } else {
         header("Location: sign_up.php");
         exit;

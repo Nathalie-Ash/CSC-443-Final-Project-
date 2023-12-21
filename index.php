@@ -20,30 +20,32 @@ if (isset($_COOKIE["language"])) {
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <title>Login</title>
 </head>
 
 <body>
-    <div class="title">
-        <span>Login</span>
-    </div>
-
-    <div class="paragraph">
-        <form action="BE/login.php" method="POST" id="login-form">
-            <label for="un">User Name</label>
-            <br>
-            <input type="text" name="username" id="un">
-            <br>
-            <label for="pass">Password</label>
-            <br>
-            <input type="password" name="password" id="pass">
-            <br>
-            <input type="button" value="Login" onclick="login()">
-            <input type="button" value="Cancel" onclick="ClearForm()">
-        </form>
-        <a href="./front end/signup.html">Sign Up...</a>
+<div class="title-text">
+            <p>Login</p>
+            <h1>Welcome !</h1>
+        </div>
+    <div class="form-container">
+        <div class="paragraph">
+            <form action="BE/login.php" method="POST" id="login-form">
+                <label for="un">User Name</label>
+                <br>
+                <input type="text" name="username" id="un">
+                <br>
+                <label for="pass">Password</label>
+                <br>
+                <input type="password" name="password" id="pass">
+                <br>
+                <input type="button" value="Login" onclick="login()">
+                <input type="button" value="Cancel" onclick="ClearForm()">
+            </form>
+            <a href="./front end/signup.html">Don't have an account? Sign Up !</a>
+        </div>
     </div>
 
     <script>
