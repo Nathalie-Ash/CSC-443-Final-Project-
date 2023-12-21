@@ -1,41 +1,34 @@
 <?php
 
-session_start();
+$dbhost="127.0.0.1";
+$dbname="bookingsystem";
+$dbuser="root";
+$dbpass="";
+$db=null;
+    try {
+		$db = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);		
+	} catch (PDOException $e) {
+		print "Error!: " . $e->getMessage() . "<br/>";
+		die();
+	}
 
- require_once("../front end/common/menu.php"); 
- require_once 'dbconnect.php';
+    $username=$_POST["username"];      //define variable $un and assign the username sent from the form
+    $password=$_POST["password"];    
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-    $password = isset($_POST['password']) ? $_POST['password'] : '';
-
-    if (!empty($email) && !empty($password)) {
-        $query = "SELECT id, password FROM user WHERE email = :email";
-        $stmt = $pdo->prepare($query);
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->execute();
-
-        if ($stmt->rowCount() == 1) {
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if (password_verify($password, $user['password'])) {
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['username'] = $email;
-
-                header("Location: index.php");
-                exit;
-            } else {
-                $login_err = "Invalid email or password.";
-            }
-        } else {
-            $login_err = "Invalid email or password.";
-        }
-    } else {
-        $login_err = "Please enter both email and password.";
-    }
-}
-
-if (isset($login_err)) {
-    echo $login_err;
-}
+    $query="select ID from user where username='".$username."' AND password='".$password."'";
+    //echo $query;
+    $stmt=$db->query($query);
+    $rowCount=$stmt->rowCount();
+    echo $rowCount;
+    if ($rowCount>0){
+        session_start();
+        $row = $stmt->fetch();
+        $id=$row["id"];
+        $_SESSION["id"]=$id;
+        $_SESSION["username"]=$username;
+        header("location:../front end/home.php");
+    }else{
+        header("location:../index.php");
+    }    
+    
 ?>

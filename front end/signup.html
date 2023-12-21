@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Barber Shop - Sign Up</title>
-    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="signup-container">
+    <div class="form-container">
         <form action="sign_up.php" method="POST" class="signup-form" id="signupForm">
+    <div class="signup-container">
+        <form action="../BE/sign_up.php" method="POST" class="signup-form" id="signupForm">
             <h2>Sign Up</h2>
 
             <label for="username">Username</label>
             <input type="text" name="username" required>
 
-            <label for="firstname">First Name</label>
-            <input type="text" name="firstname" required>
+            <label for="fullname">Full Name</label>
+            <input type="text" name="fullname" required>
 
-            <label for="lastname">Last Name</label>
-            <input type="text" name="lastname" required>
+            <label for="age">Age</label>
+            <input type="number" name="age" required>
 
             <label for="email">Email</label>
             <input type="email" name="email" required>
 
-            <label for="pass">Password</label>
-            <input type="password" name="pass" required id="password">
+            <label for="password">Password</label>
+            <input type="password" name="password" required id="password">
 
             <label for="confirmPassword">Confirm Password</label>
             <input type="password" name="confirmPassword" required id="confirmPassword">
 
 
-            <button type="submit" class="submit-btn">Sign Up</button>
+            <button type="button" class="submit-btn">Sign Up</button>
 
         </form>
         <p>Already have an account? <a href="../index.php">Login here</a>.</p>
     </div>
 
     <script>
-        document.getElementById('signupForm').onsubmit = function() {
+        document.getElementById('signupForm').onsubmit = function () {
             var password = document.getElementById('password').value;
             var confirmPassword = document.getElementById('confirmPassword').value;
 
@@ -50,4 +54,5 @@
         };
     </script>
 </body>
+
 </html>

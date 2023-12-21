@@ -1,5 +1,6 @@
-<?php require_once("common/menu.php");?>
+<?php require_once("common/menu.php"); ?>
 <html>
+
 <head>
     <!-- Include only one instance of jQuery -->
     <script src="../https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -10,363 +11,693 @@
     <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/adminlte.min.css">
-
-    <!-- Include necessary JS files -->
     <script src="../https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha256-rfP5FL5P6hME2eVpPBO3j1mAj7jJ4ca4DgS2+t7fjTM=" crossorigin="anonymous"></script>
     <script src="../https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js" integrity="sha256-KJ3o98hA46wLVhnLZM3eT9z6/z5fDp+T0a6Zcf7xkCI=" crossorigin="anonymous"></script>
-
-    <!-- Include your custom CSS and JS files -->
     <link rel="stylesheet" href="../css/main.css">
     <link href="../https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap" rel="stylesheet">
     <script src="../https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="../backEnd/jquery.min.js"></script>
+    <script src="../backEnd/bootstrap.bundle.min.js"></script>
+    <script src="../backEnd/jquery-ui.min.js"></script>
     <script src="../backEnd/moment.min.js"></script>
     <script src="../backEnd/main.min.js"></script>
+    <script src="../backEnd/main.js"></script>
+    <script src="../BE/calenderControl.js"></script>
 
 </head>
+
 <body>
-<div id ="menuBtn">
-    <img src = "../Barber_Shop_img/menu.png" id ="menu">
-</div>
-<section id="calendar1">
-        <div class="title-text">
-            <p>Calendar</p>
-            <h1>Events</h1>
-        </div>
+    <div class="wrapper">
 
-    <div class="content-wrapper">
-
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="sticky-top mb-3">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Draggable Events</h4>
-                                </div>
-                                <div class="card-body">
-                                    <!-- the events -->
-                                    <div id="external-events">
-                                        <div class="external-event bg-success">Hair Styling</div>
-                                        <div class="external-event bg-warning">Beard Trimming</div>
-                                        <div class="external-event bg-info">Hair Cut</div>
-                                        <div class="external-event bg-primary">Dry Shampoo</div>
-                                        <!--<div class="external-event bg-danger"></div>-->
-                                        <div class="checkbox">
-                                            <label for="drop-remove">
-                                                <input type="checkbox" id="drop-remove">
-                                                remove after drop
-                                            </label>
+        <section id="feature">
+            <div class="title-text">
+                <p>Calender</p>
+                <h1>Book Online</h1>
+            </div>
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="sticky-top mb-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Draggable Events</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- the events -->
+                                        <div id="external-events">
+                                            <div class="external-event bg-success">Hair Styling</div>
+                                            <div class="external-event bg-warning">Hair Cut</div>
+                                            <div class="external-event bg-info">Beard Trimming</div>
+                                            <div class="external-event bg-danger">Dry Shampoo</div>
+                                            <div class="checkbox">
+                                                <label for="drop-remove">
+                                                    <input type="checkbox" id="drop-remove">
+                                                    remove after drop
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
+                                    <!-- /.card-body -->
                                 </div>
-                                <!-- /.card-body -->
-                            </div>
-                            <!-- /.card -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Create Event</h3>
-                                </div>
-                                <div class="card-body">
-                                    <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
-                                        <ul class="fc-color-picker" id="color-chooser">
-                                            <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
-                                            <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
-                                            <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
-                                            <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
-                                            <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
-                                        </ul>
+                                <!-- /.card -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Create Event</h3>
                                     </div>
-                                    <!-- /btn-group -->
-                                    <div class="input-group">
-                                        <input id="new-event" type="text" class="form-control" placeholder="Event Title">
-
-                                        <div class="input-group-append">
-                                            <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+                                    <div class="card-body">
+                                        <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                                            <ul class="fc-color-picker" id="color-chooser">
+                                                <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
+                                                <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
+                                                <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
+                                                <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
+                                                <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
+                                            </ul>
                                         </div>
                                         <!-- /btn-group -->
+                                        <div class="input-group">
+                                            <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+
+                                            <div class="input-group-append">
+                                                <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+                                            </div>
+                                            <!-- /btn-group -->
+                                        </div>
+                                        <!-- /input-group -->
                                     </div>
-                                    <!-- /input-group -->
                                 </div>
                             </div>
-
                         </div>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-9">
-                        <div class="card card-primary">
-                            <div class="card-body p-0">
-                                <!-- THE CALENDAR -->
-                                <div id="calendar"></div>
+                        <!-- /.col -->
+                        <div class="col-md-9">
+                            <div class="card card-primary">
+                                <div class="card-body p-0">
+                                    <!-- THE CALENDAR -->
+                                    <div id="calendar" class="fc fc-media-screen fc-direction-ltr fc-theme-bootstrap">
+                                        <div class="fc-header-toolbar fc-toolbar fc-toolbar-ltr">
+                                            <div class="fc-toolbar-chunk">
+                                                <div class="btn-group"><button type="button" title="Previous week" aria-pressed="false" class="fc-prev-button btn btn-primary"><span class="fa fa-chevron-left"></span></button><button type="button" title="Next week" aria-pressed="false" class="fc-next-button btn btn-primary"><span class="fa fa-chevron-right"></span></button></div><button type="button" title="This week" aria-pressed="false" class="fc-today-button btn btn-primary" disabled="">today</button>
+                                            </div>
+                                            <div class="fc-toolbar-chunk">
+                                                <h2 class="fc-toolbar-title" id="fc-dom-1">Dec 17 – 23, 2023</h2>
+                                            </div>
+                                            <div class="fc-toolbar-chunk">
+                                                <div class="btn-group"><button type="button" title="month view" aria-pressed="false" class="fc-dayGridMonth-button btn btn-primary">month</button><button type="button" title="week view" aria-pressed="true" class="fc-timeGridWeek-button btn btn-primary active">week</button><button type="button" title="day view" aria-pressed="false" class="fc-timeGridDay-button btn btn-primary">day</button></div>
+                                            </div>
+                                        </div>
+                                        <div aria-labelledby="fc-dom-1" class="fc-view-harness fc-view-harness-active" style="height: 583.704px;">
+                                            <div class="fc-timegrid fc-timeGridWeek-view fc-view">
+                                                <table role="grid" class="fc-scrollgrid table-bordered fc-scrollgrid-liquid">
+                                                    <thead role="rowgroup">
+                                                        <tr role="presentation" class="fc-scrollgrid-section fc-scrollgrid-section-header ">
+                                                            <th role="presentation">
+                                                                <div class="fc-scroller-harness">
+                                                                    <div class="fc-scroller" style="overflow: hidden scroll;">
+                                                                        <table role="presentation" class="fc-col-header " style="width: 769px;">
+                                                                            <colgroup>
+                                                                                <col style="width: 56px;">
+                                                                            </colgroup>
+                                                                            <thead role="presentation">
+                                                                                <tr role="row">
+                                                                                    <th aria-hidden="true" class="fc-timegrid-axis">
+                                                                                        <div class="fc-timegrid-axis-frame"></div>
+                                                                                    </th>
+                                                                                    <th role="columnheader" class="fc-col-header-cell fc-day fc-day-sun fc-day-past" data-date="2023-12-17">
+                                                                                        <div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="December 17, 2023">Sun 12/17</a></div>
+                                                                                    </th>
+                                                                                    <th role="columnheader" class="fc-col-header-cell fc-day fc-day-mon fc-day-past" data-date="2023-12-18">
+                                                                                        <div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="December 18, 2023">Mon 12/18</a></div>
+                                                                                    </th>
+                                                                                    <th role="columnheader" class="fc-col-header-cell fc-day fc-day-tue fc-day-past" data-date="2023-12-19">
+                                                                                        <div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="December 19, 2023">Tue 12/19</a></div>
+                                                                                    </th>
+                                                                                    <th role="columnheader" class="fc-col-header-cell fc-day fc-day-wed fc-day-past" data-date="2023-12-20">
+                                                                                        <div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="December 20, 2023">Wed 12/20</a></div>
+                                                                                    </th>
+                                                                                    <th role="columnheader" class="fc-col-header-cell fc-day fc-day-thu fc-day-today " data-date="2023-12-21">
+                                                                                        <div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="December 21, 2023">Thu 12/21</a></div>
+                                                                                    </th>
+                                                                                    <th role="columnheader" class="fc-col-header-cell fc-day fc-day-fri fc-day-future" data-date="2023-12-22">
+                                                                                        <div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="December 22, 2023">Fri 12/22</a></div>
+                                                                                    </th>
+                                                                                    <th role="columnheader" class="fc-col-header-cell fc-day fc-day-sat fc-day-future" data-date="2023-12-23">
+                                                                                        <div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="December 23, 2023">Sat 12/23</a></div>
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody role="rowgroup">
+                                                        <tr role="presentation" class="fc-scrollgrid-section fc-scrollgrid-section-body ">
+                                                            <td role="presentation">
+                                                                <div class="fc-scroller-harness">
+                                                                    <div class="fc-scroller" style="overflow: hidden scroll;">
+                                                                        <div class="fc-daygrid-body fc-daygrid-body-unbalanced fc-daygrid-body-natural" style="width: 769px;">
+                                                                            <table role="presentation" class="fc-scrollgrid-sync-table" style="width: 769px;">
+                                                                                <colgroup>
+                                                                                    <col style="width: 56px;">
+                                                                                </colgroup>
+                                                                                <tbody role="presentation">
+                                                                                    <tr role="row">
+                                                                                        <td aria-hidden="true" class="fc-timegrid-axis fc-scrollgrid-shrink">
+                                                                                            <div class="fc-timegrid-axis-frame fc-scrollgrid-shrink-frame fc-timegrid-axis-frame-liquid"><span class="fc-timegrid-axis-cushion fc-scrollgrid-shrink-cushion fc-scrollgrid-sync-inner">all-day</span></div>
+                                                                                        </td>
+                                                                                        <td role="gridcell" class="fc-daygrid-day fc-day fc-day-sun fc-day-past" data-date="2023-12-17">
+                                                                                            <div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div class="fc-daygrid-day-events">
+                                                                                                    <div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div>
+                                                                                                </div>
+                                                                                                <div class="fc-daygrid-day-bg"></div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td role="gridcell" class="fc-daygrid-day fc-day fc-day-mon fc-day-past" data-date="2023-12-18">
+                                                                                            <div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div class="fc-daygrid-day-events">
+                                                                                                    <div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div>
+                                                                                                </div>
+                                                                                                <div class="fc-daygrid-day-bg"></div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td role="gridcell" class="fc-daygrid-day fc-day fc-day-tue fc-day-past" data-date="2023-12-19">
+                                                                                            <div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div class="fc-daygrid-day-events">
+                                                                                                    <div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div>
+                                                                                                </div>
+                                                                                                <div class="fc-daygrid-day-bg"></div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td role="gridcell" class="fc-daygrid-day fc-day fc-day-wed fc-day-past" data-date="2023-12-20">
+                                                                                            <div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div class="fc-daygrid-day-events">
+                                                                                                    <div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div>
+                                                                                                </div>
+                                                                                                <div class="fc-daygrid-day-bg"></div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td role="gridcell" class="fc-daygrid-day fc-day fc-day-thu fc-day-today " data-date="2023-12-21">
+                                                                                            <div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div class="fc-daygrid-day-events">
+                                                                                                    <div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div>
+                                                                                                </div>
+                                                                                                <div class="fc-daygrid-day-bg"></div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td role="gridcell" class="fc-daygrid-day fc-day fc-day-fri fc-day-future" data-date="2023-12-22">
+                                                                                            <div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div class="fc-daygrid-day-events">
+                                                                                                    <div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div>
+                                                                                                </div>
+                                                                                                <div class="fc-daygrid-day-bg"></div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td role="gridcell" class="fc-daygrid-day fc-day fc-day-sat fc-day-future" data-date="2023-12-23">
+                                                                                            <div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div class="fc-daygrid-day-events">
+                                                                                                    <div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div>
+                                                                                                </div>
+                                                                                                <div class="fc-daygrid-day-bg"></div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr role="presentation" class="fc-scrollgrid-section">
+                                                            <td class="fc-timegrid-divider table-active"></td>
+                                                        </tr>
+                                                        <tr role="presentation" class="fc-scrollgrid-section fc-scrollgrid-section-body  fc-scrollgrid-section-liquid">
+                                                            <td role="presentation">
+                                                                <div class="fc-scroller-harness fc-scroller-harness-liquid">
+                                                                    <div class="fc-scroller fc-scroller-liquid-absolute" style="overflow: hidden scroll;">
+                                                                        <div class="fc-timegrid-body" style="width: 769px;">
+                                                                            <div class="fc-timegrid-slots">
+                                                                                <table aria-hidden="true" class="table-bordered" style="width: 769px;">
+                                                                                    <colgroup>
+                                                                                        <col style="width: 56px;">
+                                                                                    </colgroup>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="00:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">12am</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="00:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="00:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="00:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="01:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">1am</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="01:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="01:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="01:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="02:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">2am</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="02:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="02:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="02:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="03:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">3am</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="03:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="03:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="03:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="04:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">4am</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="04:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="04:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="04:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="05:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">5am</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="05:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="05:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="05:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="06:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">6am</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="06:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="06:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="06:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="07:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">7am</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="07:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="07:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="07:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="08:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">8am</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="08:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="08:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="08:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="09:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">9am</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="09:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="09:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="09:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="10:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">10am</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="10:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="10:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="10:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="11:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">11am</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="11:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="11:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="11:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="12:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">12pm</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="12:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="12:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="12:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="13:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">1pm</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="13:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="13:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="13:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="14:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">2pm</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="14:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="14:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="14:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="15:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">3pm</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="15:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="15:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="15:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="16:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">4pm</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="16:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="16:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="16:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="17:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">5pm</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="17:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="17:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="17:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="18:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">6pm</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="18:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="18:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="18:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="19:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">7pm</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="19:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="19:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="19:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="20:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">8pm</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="20:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="20:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="20:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="21:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">9pm</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="21:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="21:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="21:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="22:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">10pm</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="22:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="22:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="22:30:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="23:00:00">
+                                                                                                <div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame">
+                                                                                                    <div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">11pm</div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="23:00:00"></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="23:30:00"></td>
+                                                                                            <td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="23:30:00"></td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                            <div class="fc-timegrid-cols">
+                                                                                <table role="presentation" style="width: 769px;">
+                                                                                    <colgroup>
+                                                                                        <col style="width: 56px;">
+                                                                                    </colgroup>
+                                                                                    <tbody role="presentation">
+                                                                                        <tr role="row">
+                                                                                            <td aria-hidden="true" class="fc-timegrid-col fc-timegrid-axis">
+                                                                                                <div class="fc-timegrid-col-frame">
+                                                                                                    <div class="fc-timegrid-now-indicator-container"></div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td role="gridcell" class="fc-timegrid-col fc-day fc-day-sun fc-day-past" data-date="2023-12-17">
+                                                                                                <div class="fc-timegrid-col-frame">
+                                                                                                    <div class="fc-timegrid-col-bg"></div>
+                                                                                                    <div class="fc-timegrid-col-events">
+                                                                                                        <div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 0px 0% -1152px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-past" style="border-color: rgb(243, 156, 18); background-color: rgb(243, 156, 18);">
+                                                                                                                <div class="fc-event-main">
+                                                                                                                    <div class="fc-event-main-frame">
+                                                                                                                        <div class="fc-event-title-container">
+                                                                                                                            
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </a></div>
+                                                                                                    </div>
+                                                                                                    <div class="fc-timegrid-col-events"></div>
+                                                                                                    <div class="fc-timegrid-now-indicator-container"></div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td role="gridcell" class="fc-timegrid-col fc-day fc-day-mon fc-day-past" data-date="2023-12-18">
+                                                                                                <div class="fc-timegrid-col-frame">
+                                                                                                    <div class="fc-timegrid-col-bg"></div>
+                                                                                                    <div class="fc-timegrid-col-events">
+                                                                                                        <div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 0px 0% -1152px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-end fc-event-past" style="border-color: rgb(243, 156, 18); background-color: rgb(243, 156, 18);">
+                                                                                                                <div class="fc-event-main">
+                                                                                                                    <div class="fc-event-main-frame">
+                                                                                                                        <div class="fc-event-time">12:00</div>
+                                                                                                                        <div class="fc-event-title-container">
+                                                                                                                            <div class="fc-event-title fc-sticky">Long Event</div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="fc-event-resizer fc-event-resizer-end"></div>
+                                                                                                            </a></div>
+                                                                                                    </div>
+                                                                                                    <div class="fc-timegrid-col-events"></div>
+                                                                                                    <div class="fc-timegrid-now-indicator-container"></div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td role="gridcell" class="fc-timegrid-col fc-day fc-day-tue fc-day-past" data-date="2023-12-19">
+                                                                                                <div class="fc-timegrid-col-frame">
+                                                                                                    <div class="fc-timegrid-col-bg"></div>
+                                                                                                    <div class="fc-timegrid-col-events"></div>
+                                                                                                    <div class="fc-timegrid-col-events"></div>
+                                                                                                    <div class="fc-timegrid-now-indicator-container"></div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td role="gridcell" class="fc-timegrid-col fc-day fc-day-wed fc-day-past" data-date="2023-12-20">
+                                                                                                <div class="fc-timegrid-col-frame">
+                                                                                                    <div class="fc-timegrid-col-bg"></div>
+                                                                                                    <div class="fc-timegrid-col-events"></div>
+                                                                                                    <div class="fc-timegrid-col-events"></div>
+                                                                                                    <div class="fc-timegrid-now-indicator-container"></div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td role="gridcell" class="fc-timegrid-col fc-day fc-day-thu fc-day-today " data-date="2023-12-21">
+                                                                                                <div class="fc-timegrid-col-frame">
+                                                                                                    <div class="fc-timegrid-col-bg"></div>
+                                                                                                    <div class="fc-timegrid-col-events">
+                                                                                                        <div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 504px 0% -552px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-today fc-event-future" style="border-color: rgb(0, 115, 183); background-color: rgb(0, 115, 183);">
+                                                                                                                <div class="fc-event-main">
+                                                                                                                    <div class="fc-event-main-frame">
+                                                                                                                        <div class="fc-event-time">10:30</div>
+                                                                                                                        <div class="fc-event-title-container">
+                                                                                                                            <div class="fc-event-title fc-sticky">Meeting</div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="fc-event-resizer fc-event-resizer-end"></div>
+                                                                                                            </a></div>
+                                                                                                        <div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 576px 0% -672px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-today fc-event-future" style="border-color: rgb(0, 192, 239); background-color: rgb(0, 192, 239);">
+                                                                                                                <div class="fc-event-main">
+                                                                                                                    <div class="fc-event-main-frame">
+                                                                                                                        <div class="fc-event-time">12:00 - 2:00</div>
+                                                                                                                        <div class="fc-event-title-container">
+                                                                                                                            <div class="fc-event-title fc-sticky">Lunch</div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="fc-event-resizer fc-event-resizer-end"></div>
+                                                                                                            </a></div>
+                                                                                                    </div>
+                                                                                                    <div class="fc-timegrid-col-events"></div>
+                                                                                                    <div class="fc-timegrid-now-indicator-container"></div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td role="gridcell" class="fc-timegrid-col fc-day fc-day-fri fc-day-future" data-date="2023-12-22">
+                                                                                                <div class="fc-timegrid-col-frame">
+                                                                                                    <div class="fc-timegrid-col-bg"></div>
+                                                                                                    <div class="fc-timegrid-col-events">
+                                                                                                        <div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 912px 0% -1080px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-future" style="border-color: rgb(0, 166, 90); background-color: rgb(0, 166, 90);">
+                                                                                                                <div class="fc-event-main">
+                                                                                                                    <div class="fc-event-main-frame">
+                                                                                                                        <div class="fc-event-time">7:00 - 10:30</div>
+                                                                                                                        <div class="fc-event-title-container">
+                                                                                                                            <div class="fc-event-title fc-sticky">Birthday Party</div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="fc-event-resizer fc-event-resizer-end"></div>
+                                                                                                            </a></div>
+                                                                                                    </div>
+                                                                                                    <div class="fc-timegrid-col-events"></div>
+                                                                                                    <div class="fc-timegrid-now-indicator-container"></div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td role="gridcell" class="fc-timegrid-col fc-day fc-day-sat fc-day-future" data-date="2023-12-23">
+                                                                                                <div class="fc-timegrid-col-frame">
+                                                                                                    <div class="fc-timegrid-col-bg"></div>
+                                                                                                    <div class="fc-timegrid-col-events"></div>
+                                                                                                    <div class="fc-timegrid-col-events"></div>
+                                                                                                    <div class="fc-timegrid-now-indicator-container"></div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
-                            <!-- /.card-body -->
+                            <!-- /.card -->
                         </div>
-                        <!-- /.card -->
+                        <!-- /.col -->
                     </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </section>
     </div>
-</section>
 
-<!-- Include AdminLTE JS -->
-<script src="../../AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
 
-<!-- Initialize FullCalendar -->
-<script>
-    $(document).ready(function () {
-        var Calendar = FullCalendar.Calendar;
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new Calendar(calendarEl, {
-            // Your FullCalendar options go here
-            // For example:
-            initialView: 'dayGridMonth',
-            events: [
-                // Your events go here
-                // Example event:
-                {
-                    title: 'Event 1',
-                    start: '2023-12-12'
-                }
-            ]
-        });
-        calendar.render();
-    });
-</script>
-<!-- jQuery -->
-<script src="../backEnd/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="../backEnd/bootstrap.bundle.min.js"></script>
-<!-- jQuery UI -->
-<script src="../backEnd/jquery-ui.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../backEnd/adminlte.min.js"></script>
-<!-- fullCalendar 2.2.5 -->
-<script src="../backEnd/moment.min.js"></script>
-<script src="../backEnd/main.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../AdminLTE-3.2.0/dist/js/demo.js"></script>
-<!-- Page specific script -->
-<script src="../https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/main.min.js"></script>
-<script>
-    $(function () {
-        function ini_events(ele) {
-            ele.each(function () {
 
-                var eventObject = {
-                    title: $.trim($(this).text()) // use the element's text as the event title
-                }
-                $(this).data('eventObject', eventObject)
+    <!-- jQuery -->
+    <script src="../backEnd/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../backEnd/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../backEnd/adminlte.min.js"></script>
+    <script src="../backEnd/jquery-ui.min.js"></script>
 
-                $(this).draggable({
-                    zIndex: 1070,
-                    revert: true, // will cause the event to go back to its
-                    revertDuration: 0  //  original position after the drag
-                })
 
-            })
-        }
+</body>
 
-        ini_events($('#external-events div.external-event'))
-
-        var date = new Date()
-        var d = date.getDate(),
-            m = date.getMonth(),
-            y = date.getFullYear()
-
-        var Calendar = FullCalendar.Calendar;
-        var Draggable = FullCalendar.Draggable;
-
-        var containerEl = document.getElementById('external-events');
-        var checkbox = document.getElementById('drop-remove');
-        var calendarEl = document.getElementById('calendar');
-
-        new Draggable(containerEl, {
-            itemSelector: '.external-event',
-            eventData: function (eventEl) {
-                return {
-                    title: eventEl.innerText,
-                    backgroundColor: window.getComputedStyle(eventEl, null).getPropertyValue('background-color'),
-                    borderColor: window.getComputedStyle(eventEl, null).getPropertyValue('background-color'),
-                    textColor: window.getComputedStyle(eventEl, null).getPropertyValue('color'),
-                };
-            }
-        });
-
-        var calendar = new Calendar(calendarEl, {
-            headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay'
-            },
-            themeSystem: 'bootstrap',
-            events: [
-                {
-                    title: 'All Day Event',
-                    start: new Date(y, m, 1),
-                    backgroundColor: '#f56954', //red
-                    borderColor: '#f56954', //red
-                    allDay: true
-                },
-                {
-                    title: 'Long Event',
-                    start: new Date(y, m, d - 5),
-                    end: new Date(y, m, d - 2),
-                    backgroundColor: '#f39c12', //yellow
-                    borderColor: '#f39c12' //yellow
-                },
-                {
-                    title: 'Meeting',
-                    start: new Date(y, m, d, 10, 30),
-                    allDay: false,
-                    backgroundColor: '#0073b7', //Blue
-                    borderColor: '#0073b7' //Blue
-                },
-                {
-                    title: 'Lunch',
-                    start: new Date(y, m, d, 12, 0),
-                    end: new Date(y, m, d, 14, 0),
-                    allDay: false,
-                    backgroundColor: '#00c0ef', //Info (aqua)
-                    borderColor: '#00c0ef' //Info (aqua)
-                },
-                {
-                    title: 'Birthday Party',
-                    start: new Date(y, m, d + 1, 19, 0),
-                    end: new Date(y, m, d + 1, 22, 30),
-                    allDay: false,
-                    backgroundColor: '#00a65a', //Success (green)
-                    borderColor: '#00a65a' //Success (green)
-                },
-                {
-                    title: 'Click for Google',
-                    start: new Date(y, m, 28),
-                    end: new Date(y, m, 29),
-                    url: 'https://www.google.com/',
-                    backgroundColor: '#3c8dbc', //Primary (light-blue)
-                    borderColor: '#3c8dbc' //Primary (light-blue)
-                }
-            ],
-            editable: true,
-            droppable: true, // this allows things to be dropped onto the calendar !!!
-            drop: function (info) {
-                // is the "remove after drop" checkbox checked?
-                if (checkbox.checked) {
-                    // if so, remove the element from the "Draggable Events" list
-                    info.draggedEl.parentNode.removeChild(info.draggedEl);
-                }
-            }
-        });
-
-        calendar.render();
-        // $('#calendar').fullCalendar()
-
-        /* ADDING EVENTS */
-        var currColor = '#3c8dbc' //Red by default
-        // Color chooser button
-        $('#color-chooser > li > a').click(function (e) {
-            e.preventDefault()
-            // Save color
-            currColor = $(this).css('color')
-            // Add color effect to button
-            $('#add-new-event').css({
-                'background-color': currColor,
-                'border-color': currColor
-            })
-        })
-        $('#add-new-event').click(function (e) {
-            e.preventDefault();
-            // Get value and make sure it is not null
-            var val = $('#new-event').val();
-            var activeColorElement = $('#color-chooser li a.active');
-
-            // Check if there is an active color element and retrieve the color
-            var color = activeColorElement.length > 0 ? activeColorElement.attr('class').replace('text-', '') : '';
-            if (val.length == 0) {
-                return;
-            }
-
-            // Create events
-            function createEvent(title, color) {
-                var event = $('<div />')
-                event.css({
-                    'background-color': currColor,
-                    'border-color': currColor,
-                    'color': '#fff'
-                }).addClass('external-event');
-                // Edit button
-                var editButton = $('<button class="btn btn-sm btn-info edit-event">Edit</button>');
-                editButton.on('click', function () {
-                    // Add logic for editing the event (e.g., open a modal)
-                    alert('Edit event: ' + title);
-                });
-
-                // Delete button
-                var deleteButton = $('<button class="btn btn-sm btn-danger delete-event">Delete</button>');
-                deleteButton.on('click', function () {
-                    // Add logic for deleting the event
-                    event.remove();
-                });
-
-                // Append title and buttons to the event
-                event.append('<span class="event-title">' + title + '</span>');
-                event.append(editButton);
-                event.append(deleteButton);
-                event.text(val);
-                $('#external-events').prepend(event)
-
-                // Add draggable funtionality
-                ini_events(event)
-
-                // Remove event from text input
-                $('#new-event').val('')
-            }
-            createEvent(val, color);
-
-            // Initialize events when the DOM is ready
-            $(document).ready(function () {
-
-                // Add new event
-                $('#add-new-event').on('click',function () {
-                    var title = $('#new-event').val();
-                    var color = $('#color-chooser li a.active').attr('class').replace('text-', '');
-
-                    // Use AJAX to send data to the PHP script
-                    $.ajax({
-                        type: 'POST',
-                        url: 'create_event.php', // Path to your PHP script
-                        data: {
-                            title: title,
-                            color: color
-                        },
-                        success: function (response) {
-                            // Handle the response from the server
-                            var data = JSON.parse(response);
-                            if (data.status === 'success') {
-                                // Event created successfully
-                                // You can update the calendar or show a success message
-                                alert(data.message);
-                            } else {
-                                // Error in creating the event
-                                alert(data.message);
-                            }
-                        },
-                        error: function () {
-                            // Handle AJAX errors
-                            alert('Error connecting to the server');
-                        }
-                    });
-
-                    // Reset input field
-                    $('#new-event').val('');
-                });
-            });
-
-        });
-    });
-
-</script>
+</html>

@@ -1,6 +1,6 @@
 
 <div id ="menuBtn">
-                <img src = "../../Barber_Shop_img/menu.png" id ="menu">
+                <img src = "../Barber_Shop_img/menu.png" id ="menu">
         </div>
 <div id="sideNav">
     <nav>
