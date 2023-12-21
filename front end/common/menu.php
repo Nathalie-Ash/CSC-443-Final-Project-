@@ -6,7 +6,7 @@
     <nav>
         <ul>
             <li><a href ="home.php">Home</a></li>
-            <li><a href ="#feature">Features</a></li>
+            <li><a href ="calender.php">Calender</a></li>
             <li><a href ="services.php">Services</a></li>
             <li><a href ="testimonial.php">Testimonials</a></li>
             <li><a href ="contact.php">Contact Us</a></li>
