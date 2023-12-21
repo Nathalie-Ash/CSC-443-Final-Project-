@@ -12,13 +12,13 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
-  <div class="wrapper">
-    <section id="feature">
-      <div class="title-text">
-        <p>Prices</p>
-        <h1>Book Online</h1>
-      </div>
-
+<div class="wrapper">
+<section id ="feature">
+            <div class = "title-text">
+                <p>Prices</p>
+                <h1>Book Online</h1>
+            </div>
+    
 
       <!-- Main content -->
       <section class="content">
