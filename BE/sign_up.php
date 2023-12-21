@@ -48,8 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         header("Location: sign_up.php?error=registration_failed");
     }
-=======
-//require_once(""); /must replace with path to database
 
 
 $firstname = htmlspecialchars($_POST["firstname"]);
@@ -81,5 +79,6 @@ if ($stmt->execute([$firstname, $lastname, $email, $hashed_password, $sex, $ageG
 } else {
     header("Location: sign_up.php");
     exit;
+}
 }
 ?>

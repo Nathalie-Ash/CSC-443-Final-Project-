@@ -5,7 +5,7 @@ session_unset();
 session_destroy();
 
 if (isset($_SESSION['user_id'])) {
-    header("Location: home.php");=
+    header("Location: home.php");
     exit;
 }
 
@@ -20,7 +20,7 @@ if (isset($_COOKIE["language"])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="css/style.css"> 
 
     <title>Login</title>
 </head>
@@ -42,7 +42,7 @@ if (isset($_COOKIE["language"])) {
             <input type="button" value="Login" onclick="login()">
             <input type="button" value="Cancel" onclick="ClearForm()">
         </form>
-        <a href="front end/signup.html">Sign Up...</a>
+        <a href="./front end/signup.html">Sign Up...</a>
     </div>
 
     <script>
