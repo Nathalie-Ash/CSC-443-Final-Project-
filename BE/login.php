@@ -2,8 +2,8 @@
 
 session_start();
 
- require_once("../front end/common/menu.php"); 
- require_once 'dbconnect.php';
+require_once("../front end/common/menu.php");
+require_once 'dbconnect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = isset($_POST['email']) ? trim($_POST['email']) : '';
@@ -38,4 +38,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if (isset($login_err)) {
     echo $login_err;
 }
-?>

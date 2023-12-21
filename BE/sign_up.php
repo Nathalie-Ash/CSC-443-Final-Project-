@@ -1,14 +1,16 @@
 <?php
-require_once 'dbconnect.php'; 
+require_once 'dbconnect.php';
 
-class User {
+class User
+{
     public $username;
     public $firstname;
     public $lastname;
     public $email;
     public $password;
 
-    public function __construct($username, $firstname, $lastname, $email, $password) {
+    public function __construct($username, $firstname, $lastname, $email, $password)
+    {
         $this->username = $username;
         $this->firstname = $firstname;
         $this->lastname = $lastname;
@@ -16,8 +18,9 @@ class User {
         $this->password = $password;
     }
 
-    public function save() {
-        global $pdo; 
+    public function save()
+    {
+        global $pdo;
         $hashed_password = password_hash($this->password, PASSWORD_DEFAULT);
         $query = "INSERT INTO user (username, fullname, email, password) VALUES (?, ?, ?, ?)";
         $stmt = $pdo->prepare($query);
@@ -50,35 +53,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-$firstname = htmlspecialchars($_POST["firstname"]);
-$lastname = htmlspecialchars($_POST["lastname"]);
-$email = htmlspecialchars($_POST["email"]);
-$password = htmlspecialchars($_POST["pass"]);
-$sex = htmlspecialchars($_POST["sex"]);
-$ageGroup = htmlspecialchars($_POST["ageGroup"]);
-$language = htmlspecialchars($_POST["language"]);
+    $firstname = htmlspecialchars($_POST["firstname"]);
+    $lastname = htmlspecialchars($_POST["lastname"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $password = htmlspecialchars($_POST["pass"]);
+    $sex = htmlspecialchars($_POST["sex"]);
+    $ageGroup = htmlspecialchars($_POST["ageGroup"]);
+    $language = htmlspecialchars($_POST["language"]);
 
 
-$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 
-$query = "INSERT INTO tbl_users (firstname, lastname, email, password, sex, age_group, language) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO tbl_users (firstname, lastname, email, password, sex, age_group, language) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 
-$stmt = $db->prepare($query);
+    $stmt = $db->prepare($query);
 
 
-if ($stmt->execute([$firstname, $lastname, $email, $hashed_password, $sex, $ageGroup, $language])) {
-   
-    session_start();
-    $_SESSION["username"] = $email;
+    if ($stmt->execute([$firstname, $lastname, $email, $hashed_password, $sex, $ageGroup, $language])) {
 
-   
-    header("Location: index.php");
+        session_start();
+        $_SESSION["username"] = $email;
 
-} else {
-    header("Location: sign_up.php");
-    exit;
+
+        header("Location: index.php");
+    } else {
+        header("Location: sign_up.php");
+        exit;
+    }
 }
-}
-?>

@@ -1,5 +1,4 @@
-
-<?php 
+<?php
 session_start();
 session_unset();
 session_destroy();
@@ -9,7 +8,7 @@ if (isset($_SESSION['user_id'])) {
     exit;
 }
 
-setcookie("language", "en", time() + 3600); 
+setcookie("language", "en", time() + 3600);
 if (isset($_COOKIE["language"])) {
     echo $_COOKIE["language"];
 } else {
@@ -19,15 +18,17 @@ if (isset($_COOKIE["language"])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Login</title>
 </head>
+
 <body>
     <div class="title">
         <span>Login</span>
-    </div>        
+    </div>
 
     <div class="paragraph">
         <form action="BE/login.php" method="POST" id="login-form">
@@ -62,4 +63,5 @@ if (isset($_COOKIE["language"])) {
         }
     </script>
 </body>
+
 </html>

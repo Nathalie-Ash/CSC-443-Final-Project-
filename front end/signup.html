@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Barber Shop - Sign Up</title>
-    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="signup-container">
         <form action="sign_up.php" method="POST" class="signup-form" id="signupForm">
@@ -38,7 +40,7 @@
     </div>
 
     <script>
-        document.getElementById('signupForm').onsubmit = function() {
+        document.getElementById('signupForm').onsubmit = function () {
             var password = document.getElementById('password').value;
             var confirmPassword = document.getElementById('confirmPassword').value;
 
@@ -50,4 +52,5 @@
         };
     </script>
 </body>
+
 </html>
