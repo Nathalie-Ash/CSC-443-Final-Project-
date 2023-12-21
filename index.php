@@ -28,7 +28,7 @@ if (isset($_COOKIE["language"])) {
     <div class="title">
         <span>Login</span>
     </div>        
-
+<div class="form-container">
     <div class="paragraph">
         <form action="BE/login.php" method="POST" id="login-form">
             <label for="un">User Name</label>
@@ -44,7 +44,7 @@ if (isset($_COOKIE["language"])) {
         </form>
         <a href="front end/signup.html">Sign Up...</a>
     </div>
-
+</div>
     <script>
         function login() {
             var un = document.getElementById("un").value;
