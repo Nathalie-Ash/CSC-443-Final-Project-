@@ -24,11 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: index.php");
         exit;
     } else {
-        header("Location: signup.php?error=registration_failed");
+        header("Location: sign_up.php?error=registration_failed");
         exit;
     }
 } else {
-    header("Location: signup.php");
+    header("Location: sign_up.php");
     exit;
 }
 ?>
