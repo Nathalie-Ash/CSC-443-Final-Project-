@@ -38,9 +38,7 @@
                         </div>
                         <div class ="feature-text">
                             <p>
-                                I am here to explain about my experienced staff that is 
-                                non existent but for the sake of the video we will be writing 
-                                a piece of text about it.
+                            With a seasoned background in the art of barbering, our experienced staff brings a wealth of expertise to the chair, ensuring each client receives a tailored and refined grooming experience.
                             </p>
                         </div>
                     </div>
@@ -52,9 +50,7 @@
                         </div>
                         <div class ="feature-text">
                             <p>
-                                I am here to explain about pre booking online that is 
-                                non existent but for the sake of the video we will be writing 
-                                a piece of text about it.
+                             Schedule your appointments effortlessly from the comfort of your device, ensuring you receive personalized attention at a time that suits your busy lifestyle.
                             </p>
                         </div>
                     </div>
@@ -66,9 +62,7 @@
                         </div>
                         <div class ="feature-text">
                             <p>
-                                I am here to explain about our affordable costs that are 
-                                non existent but for the sake of the video we will be wrting 
-                                a piece of text about it.
+ We believe that everyone deserves to look and feel their best, and our pricing reflects our dedication to making exceptional grooming accessible to all.
                             </p>
                         </div>
                     </div>

@@ -28,23 +28,19 @@
                             <small>@johnnolan</small>
                         </div>
                     </div>
-                    <p>This is a testimonial from the first client. 
-                        It is random and has no basis abslutely but it is used for 
-                        the sake of this demonstration.</p>
+                    <p>"Having tried several barbershops in the area, I can confidently say that this one stands out from the rest. The skilled staff not only delivers top-notch haircuts but also creates a welcoming environment. The online pre-booking system makes it a breeze to schedule appointments, ensuring I never miss a chance to enjoy their excellent service.</p>
                 </div>
                 <div class ="testimonial-col">
                     <div class ="user">
-                        <img src="../Barber_Shop_img/img-2.jpg">
+                        <img src="../Barber_Shop_img/man.png">
                         <div class ="user-info">
-                            <h4>Lucy Chen
+                            <h4>Jack Doe
                                 <i class="fa fa-twitter"></i>
                             </h4>
-                            <small>@lucychen</small>
+                            <small>@jackdoe</small>
                         </div>
                     </div>
-                    <p>This is a testimonial from the second client. 
-                        It is random and has no basis abslutely but it is used for 
-                        the sake of this demonstration.</p>
+                    <p>I've been a loyal customer for years, and this barber shop never disappoints. The expertise of the barbers is evident in every cut—they truly understand the art of grooming. The attention to customer satisfaction, combined with the reasonable pricing, makes it my go-to place for a consistently great experience.</p>
                 </div>
                 <div class ="testimonial-col">
                     <div class ="user">
@@ -56,9 +52,7 @@
                             <small>@timbradford</small>
                         </div>
                     </div>
-                    <p>This is a testimonial from the third client. 
-                        It is random and has no basis abslutely but it is used for 
-                        the sake of this demonstration.</p>
+                    <p>I stumbled upon this hidden gem of a barber shop, and it's been a game-changer for my grooming routine. The experienced barbers here have a keen eye for detail and always leave me looking sharp. The atmosphere is friendly, and the affordable prices are the icing on the cake!</p>
                 </div>
             </div>
         </section>
