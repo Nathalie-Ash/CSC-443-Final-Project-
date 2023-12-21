@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
  require_once("../front end/common/menu.php"); 
  require_once 'dbconnect.php';
 

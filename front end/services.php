@@ -1,13 +1,13 @@
-
+<?php require_once("common/menu.php");?>
 <html>
     <head>
         <title>Barber Shop Website Design - Easy Tutorials</title>
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <meta name ="viewport" content="width = device-width, initial-scale = 1">
         <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap" rel = "stylesheet">
         <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-
+        <script type="text/javascript" src="../backEnd/controls.js"></script>
     </head>
     <body>
         <section id="service">
