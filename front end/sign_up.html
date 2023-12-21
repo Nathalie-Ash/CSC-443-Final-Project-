@@ -30,14 +30,14 @@
             <label for="confirmPassword">Confirm Password</label>
             <input type="password" name="confirmPassword" required id="confirmPassword">
 
-  
 
             <button type="submit" class="submit-btn">Sign Up</button>
+
         </form>
+        <p>Already have an account? <a href="../index.php">Login here</a>.</p>
     </div>
 
     <script>
-     ]
         document.getElementById('signupForm').onsubmit = function() {
             var password = document.getElementById('password').value;
             var confirmPassword = document.getElementById('confirmPassword').value;
