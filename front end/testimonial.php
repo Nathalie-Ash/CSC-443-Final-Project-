@@ -74,7 +74,7 @@ if (!isset($_SESSION["username"])) {
                 <label for="testimonial">Testimonial:</label>
                 <textarea id="testimonial" name="testimonial" rows="4" required></textarea>
 
-                <button type="submit" class="submit-btn">Submit Testimonial</button>
+                <button type="submit" class="submit-btn" style="width: 80%;margin-left: 12%;">Submit Testimonial</button>
                 
             </form>
         </div>

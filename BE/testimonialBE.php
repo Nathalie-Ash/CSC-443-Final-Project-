@@ -12,7 +12,7 @@ $testimonials->testimonial=VarExist($_POST["testimonial"]);
 if (InsertUserToDBfromObjet($testimonials)){
     header("location:../front end/testimonial.php");
 }else{
-    header("location:../testimonial.php");
+    header("location:../front end/testimonial.php");
     echo "failed";
 }
 
