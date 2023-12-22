@@ -9,11 +9,7 @@ if (isset($_SESSION['user_id'])) {
 }
 
 setcookie("language", "en", time() + 3600);
-if (isset($_COOKIE["language"])) {
-    echo $_COOKIE["language"];
-} else {
-    echo "Language cookie doesn't exist";
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -26,10 +22,13 @@ if (isset($_COOKIE["language"])) {
 </head>
 
 <body>
-<div class="title-text">
-            <p>Login</p>
-            <h1>Welcome !</h1>
-        </div>
+    
+<section id="feature">
+      <div class="title-text">
+        <p>Log In </p>
+        <h1>Welcome</h1>
+
+            </div>
     <div class="form-container">
         <div class="paragraph">
             <form action="BE/login.php" method="POST" id="login-form">

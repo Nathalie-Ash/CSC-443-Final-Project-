@@ -1,4 +1,10 @@
 <?php require_once("common/menu.php"); ?>
+<?php
+    session_start();
+    if (!isset($_SESSION["username"])){
+        header("location:../index.php");
+    }
+?>
 <html>
 
 <head>
@@ -28,7 +34,7 @@
                 <div class="service-desc">
                     <h3>Hair Styling</h3>
                     <hr>
-                    <p>this is test under description of barber foundation </p>
+                    <p>Elevate your hairstyle with our expert styling techniques.</p>
                 </div>
             </a>
             <a href="prices.php" class="single-service">
@@ -37,7 +43,7 @@
                 <div class="service-desc">
                     <h3>Beard Trimming</h3>
                     <hr>
-                    <p>this is test under description of barber foundation </p>
+                    <p>Crafting sharp and refined beards for a distinguished appearance.</p>
                 </div>
             </a>
 
@@ -47,7 +53,7 @@
                 <div class="service-desc">
                     <h3>Hair Cut</h3>
                     <hr>
-                    <p>this is test under description of barber foundation </p>
+                    <p>Transform your look with precision cuts tailored to your style.</p>
                 </div>
             </a>
             <a href="prices.php" class="single-service">
@@ -56,7 +62,7 @@
                 <div class="service-desc">
                     <h3>Dry Shampoo</h3>
                     <hr>
-                    <p>this is test under description of barber foundation </p>
+                    <p>Revitalize your hair on the go with our refreshing dry shampoo service.</p>
                 </div>
             </a>
         </div>
