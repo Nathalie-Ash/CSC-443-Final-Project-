@@ -716,3 +716,45 @@ hr {
   margin-left: 10px;
 }
 
+
+
+
+
+.testimonial-form {
+  width: 80%;
+  margin-left: 10%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+  padding: 10px;
+text-align: center;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-form h2 {
+  text-align: center;
+}
+
+.testimonial-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.testimonial-form input,
+.testimonial-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.testimonial-form button {
+  background-color:#009688;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}

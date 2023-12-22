@@ -76,7 +76,7 @@
                     </div>
                 </div>
 
-                <h1>Affordable Cost</h1>
+                <h1>Affordable Prices</h1>
                 <div class="features-desc">
                     <div class="feature-icon">
                         <i class="fa fa-money-bill"></i>

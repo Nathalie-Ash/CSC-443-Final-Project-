@@ -23,7 +23,7 @@ if (!isset($_SESSION["username"])) {
 
         <div class="title-text">
             <p>Testimonial</p>
-            <h1>What Client Says</h1>
+            <h1>What Clients Say</h1>
         </div>
 
         <div class="testimonial-row">
@@ -64,7 +64,23 @@ if (!isset($_SESSION["username"])) {
                 <p>I stumbled upon this hidden gem of a barber shop, and it's been a game-changer for my grooming routine. The experienced barbers here have a keen eye for detail and always leave me looking sharp. The atmosphere is friendly, and the affordable prices are the icing on the cake!</p>
             </div>
         </div>
+
+        <div class="testimonial-form">
+            <h2>Add Your Testimonial</h2>
+            <form action="../BE/testimonialBE.php" method= "POST" class = "testimonialForm" id= "testimonialForm">
+                <label for="username">Your Name:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="testimonial">Testimonial:</label>
+                <textarea id="testimonial" name="testimonial" rows="4" required></textarea>
+
+                <button type="submit" class="submit-btn">Submit Testimonial</button>
+                
+            </form>
+        </div>
+        
     </section>
 </body>
 
 </html>
+
