@@ -89,7 +89,7 @@
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-twitter-square"></i>
         </div>
-        <p>Copyright CSC 443 </p>
+        <p>Copyright Web CSC 443</p>
     </div>
 
     </section>

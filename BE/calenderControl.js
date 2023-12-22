@@ -1,5 +1,4 @@
 
-
 $(function() {
     // Initialize the external events
     function ini_events(ele) {
@@ -7,7 +6,7 @@ $(function() {
             // Create an event object with the title from the element's text
             var eventObject = {
                 title: $.trim($(this).text())
-            };
+            };0
             $(this).data('eventObject', eventObject);
 
             // Make the event draggable

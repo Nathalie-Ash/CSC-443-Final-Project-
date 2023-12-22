@@ -26,7 +26,7 @@
         <h1>Book Online</h1>
         <section class="content" >
         
-                <a href="calender.php" class="btn btn-primary btn-lg" style="background-color:#009688; padding-top: 0%;margin-top:0%; text-align: center;">Book your Appointment now</a>
+                <a href="calender.php" class="btn btn-primary btn-lg" style="background-color:#009688; padding-top: 0%;margin-top:0%">Book your Appointment now</a>
           </section>
             </div>
 
