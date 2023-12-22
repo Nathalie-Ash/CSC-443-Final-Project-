@@ -246,7 +246,7 @@ nav ul li a {
 .signup-form input[type="email"],
 .signup-form input[type="password"],
 .signup-form select {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ddd;
@@ -271,16 +271,20 @@ nav ul li a {
   margin-right: 15px;
 }
 
-.signup-form input[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #009688;
-  color: white;
-  cursor: pointer;
-}
 
+
+.submit-btn{
+  background-color: #40998f;
+  width: 90%;
+  height: 40px;
+  border: none;
+  color: white;
+  font-size: medium;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+
+}
 .signup-form input[type="submit"]:hover {
   background-color: #00796b;
   vertical-align: middle;
@@ -645,7 +649,7 @@ hr {
   width: 100%;
   max-width: 400px;
   margin: 50px auto;
-  padding: 20px;
+  padding: 10px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -661,7 +665,7 @@ hr {
 .form-container input[type="email"],
 .form-container input[type="password"],
 .form-container select {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ddd;
@@ -675,17 +679,19 @@ hr {
 
 .form-container input[type="button"],
 .form-container input[type="submit"] {
-  width: 100%;
+  margin-bottom: 10px;
   padding: 10px;
-  border: none;
+  border:  black;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 15px;
+  background-color: #40998f;
+  width: 90%;
+  height: 40px;
+  font-size: medium;
 }
 
-.form-container input[type="button"]:hover,
-.form-container input[type="submit"]:hover {
-  background-color: #00796b;
-}
+
 
 @media screen and (max-width: 770px) {
 .signup-container {

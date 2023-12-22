@@ -22,10 +22,13 @@ setcookie("language", "en", time() + 3600);
 </head>
 
 <body>
-<div class="title-text">
-            <p>Login</p>
-            <h1>Welcome !</h1>
-        </div>
+    
+<section id="feature">
+      <div class="title-text">
+        <p>Log In </p>
+        <h1>Welcome</h1>
+
+            </div>
     <div class="form-container">
         <div class="paragraph">
             <form action="BE/login.php" method="POST" id="login-form">
