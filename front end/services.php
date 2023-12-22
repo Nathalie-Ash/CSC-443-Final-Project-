@@ -19,6 +19,7 @@
 
 <body>
     <section id="service">
+   
         <div class="title-text">
             <p>Services</p>
             <h1>We provide Better</h1>
