@@ -89,7 +89,7 @@
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-twitter-square"></i>
         </div>
-        <p>Copyright Easy Tutorial Yutube Channel</p>
+        <p>Copyright CSC 443 </p>
     </div>
 
     </section>
