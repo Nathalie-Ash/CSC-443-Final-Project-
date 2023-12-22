@@ -9,7 +9,11 @@
             <li><a href ="services.php">Services</a></li>
             <li><a href ="testimonial.php">Testimonials</a></li>
             <li><a href ="contact.php">Contact Us</a></li>
+             <li><a href="../BE/logout.php" id="logOut">Logout</a></li>;
         </ul>
 
     </nav>
 </div>
+
+
+

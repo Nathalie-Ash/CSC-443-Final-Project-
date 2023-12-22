@@ -19,15 +19,28 @@
 </head>
 
 <body>
-    <section id="banner">
-        <img src="../Barber_Shop_img/logo.png" class="logo">
-        <div class="banner-text">
-            <h1>Hair Studio</h1>
-            <p>Style Your Hair is Style Your Life </p>
-            <div class="banner-btn">
-                <a href="services.php"><span> </span>Find Out</a>
-                <a href="#feature"><span></span>Read More</a>
+<section id="banner">
+        <div class="banner-content">
+           
+            
+            <div class ="logo" style="color: white;">
+
+            <?php
+            if (isset($_SESSION["username"])) {
+                echo '<span class ="logo">Welcome, '. $_SESSION["username"];
+            }
+            ?>
+          
             </div>
+            <div class="banner-text">
+                <h1>Hair Studio</h1>
+                <p>Style Your Hair is Style Your Life </p>
+                <div class="banner-btn">
+                    <a href="services.php"><span> </span>Find Out</a>
+                    <a href="#feature"><span></span>Read More</a>
+                </div>
+            </div>
+        </div>
     </section>
 
 

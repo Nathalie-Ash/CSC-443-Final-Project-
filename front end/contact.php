@@ -23,6 +23,7 @@
 
 
         <section id="footer">
+
             <img src="../Barber_Shop_img/footer-img.png" class="footer-img">
             <div class="title-text">
                 <p>Contact</p>

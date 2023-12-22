@@ -19,7 +19,7 @@
 
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
-
+ 
   <section id="feature">
       <div class="title-text">
         <p>Prices</p>

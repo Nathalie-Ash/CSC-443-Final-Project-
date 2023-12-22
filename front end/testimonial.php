@@ -1,9 +1,9 @@
 <?php require_once("common/menu.php"); ?>
 <?php
-    session_start();
-    if (!isset($_SESSION["username"])){
-        header("location:../index.php");
-    }
+session_start();
+if (!isset($_SESSION["username"])) {
+    header("location:../index.php");
+}
 ?>
 <html>
 
@@ -20,6 +20,7 @@
 
 <body>
     <section id="testimonial">
+
         <div class="title-text">
             <p>Testimonial</p>
             <h1>What Client Says</h1>
