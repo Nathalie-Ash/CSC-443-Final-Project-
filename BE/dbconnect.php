@@ -1,20 +1,14 @@
-<?php
-$host = 'localhost';
-$db   = 'bookingsystem'; 
-$user = 'root';         
-$pass = '';          
-$charset = 'utf8mb4';
+<?php 
+$dbhost="127.0.0.1";
+$dbname="bookingsystem";
+$dbuser="root";
+$dbpass="";
+$db=null;
+    try {
+		$db = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);		
+	} catch (PDOException $e) {
+		print "Error!: " . $e->getMessage() . "<br/>";
+		die();
+	}
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-
-try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
-    throw new \PDOException($e->getMessage(), (int)$e->getCode());
-}
 ?>

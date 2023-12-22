@@ -1,48 +1,50 @@
-
-<?php 
+<?php
 session_start();
 session_unset();
 session_destroy();
 
 if (isset($_SESSION['user_id'])) {
-    header("Location: home.php");=
+    header("Location: home.php");
     exit;
 }
 
-setcookie("language", "en", time() + 3600); 
-if (isset($_COOKIE["language"])) {
-    echo $_COOKIE["language"];
-} else {
-    echo "Language cookie doesn't exist";
-}
+setcookie("language", "en", time() + 3600);
+
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="./css/style.css">
 
     <title>Login</title>
 </head>
+
 <body>
-    <div class="title">
-        <span>Login</span>
-    </div>        
-<div class="form-container">
-    <div class="paragraph">
-        <form action="BE/login.php" method="POST" id="login-form">
-            <label for="un">User Name</label>
-            <br>
-            <input type="text" name="username" id="un">
-            <br>
-            <label for="pass">Password</label>
-            <br>
-            <input type="password" name="password" id="pass">
-            <br>
-            <input type="button" value="Login" onclick="login()">
-            <input type="button" value="Cancel" onclick="ClearForm()">
-        </form>
-        <a href="front end/signup.html">Sign Up...</a>
+    
+<section id="feature">
+      <div class="title-text">
+        <p>Log In </p>
+        <h1>Welcome</h1>
+
+            </div>
+    <div class="form-container">
+        <div class="paragraph">
+            <form action="BE/login.php" method="POST" id="login-form">
+                <label for="un">User Name</label>
+                <br>
+                <input type="text" name="username" id="un">
+                <br>
+                <label for="pass">Password</label>
+                <br>
+                <input type="password" name="password" id="pass">
+                <br>
+                <input type="button" value="Login" onclick="login()">
+                <input type="button" value="Cancel" onclick="ClearForm()">
+            </form>
+            <a href="./front end/signup.html">Don't have an account? Sign Up !</a>
+        </div>
     </div>
 </div>
     <script>
@@ -62,4 +64,5 @@ if (isset($_COOKIE["language"])) {
         }
     </script>
 </body>
+
 </html>

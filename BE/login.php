@@ -1,41 +1,52 @@
 <?php
-
 session_start();
 
- require_once("../front end/common/menu.php"); 
- require_once 'dbconnect.php';
+// Clear any existing session data
+session_unset();
+session_destroy();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-    $password = isset($_POST['password']) ? $_POST['password'] : '';
+// Initialize a new session
+session_start();
 
-    if (!empty($email) && !empty($password)) {
-        $query = "SELECT id, password FROM user WHERE email = :email";
-        $stmt = $pdo->prepare($query);
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->execute();
+$dbhost = "127.0.0.1";
+$dbname = "bookingsystem";
+$dbuser = "root";
+$dbpass = "";
 
-        if ($stmt->rowCount() == 1) {
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+try {
+    $db = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}
 
-            if (password_verify($password, $user['password'])) {
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['username'] = $email;
+$username = $_POST["username"];
+$password = $_POST["password"];
 
-                header("Location: index.php");
-                exit;
-            } else {
-                $login_err = "Invalid email or password.";
-            }
-        } else {
-            $login_err = "Invalid email or password.";
-        }
-    } else {
-        $login_err = "Please enter both email and password.";
+$query = "SELECT ID FROM user WHERE username=:username AND password=:password";
+$stmt = $db->prepare($query);
+$stmt->bindParam(':username', $username);
+$stmt->bindParam(':password', $password);
+$stmt->execute();
+
+$rowCount = $stmt->rowCount();
+
+if ($rowCount > 0) {
+    $row = $stmt->fetch();
+    $id = $row["ID"];
+    $_SESSION["user_id"] = $id; // Changed 'id' to 'user_id' to match later checks
+    $_SESSION["username"] = $username;
+    if ($username=="admin"){
+        header("location:../BE/admin.php");
     }
+    else{
+        header("location:../front end/home.php");
+
+    }
+} else {
+    header("location:../index.php");
 }
 
-if (isset($login_err)) {
-    echo $login_err;
-}
+// Setting the language cookie
+setcookie("language", "en", time() + 3600);
 ?>

@@ -1,5 +1,10 @@
 <?php
-// create_event.php
+
+session_start();
+if (!isset($_SESSION["username"])){
+    header("location:../index.php");
+}
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get data from the POST request
@@ -29,4 +34,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     http_response_code(400);
     echo json_encode(['status' => 'error', 'message' => 'Invalid request method']);
 }
-?>
