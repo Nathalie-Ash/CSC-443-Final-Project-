@@ -1,4 +1,10 @@
 <?php require_once("common/menu.php"); ?>
+<?php
+    session_start();
+    if (!isset($_SESSION["username"])){
+        header("location:../index.php");
+    }
+?>
 <html>
 
 <head>
@@ -83,7 +89,7 @@
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-twitter-square"></i>
         </div>
-        <p>Copyright CSC 443 </p>
+        <p>Copyright Web CSC 443</p>
     </div>
 
     </section>

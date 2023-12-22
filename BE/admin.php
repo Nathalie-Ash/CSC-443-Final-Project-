@@ -1,8 +1,8 @@
 <?php
-    // session_start();
-    // if (($_SESSION["username"])!="admin"){
-    //     header("location:../index.php");
-    // }
+     session_start();
+     if (($_SESSION["username"])!="admin"){
+         header("location:../index.php");
+     }
 ?>
 <?php 
 $dbhost="127.0.0.1";

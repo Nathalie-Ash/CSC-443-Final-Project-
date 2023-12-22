@@ -1,34 +1,52 @@
 <?php
+session_start();
 
-$dbhost="127.0.0.1";
-$dbname="bookingsystem";
-$dbuser="root";
-$dbpass="";
-$db=null;
-    try {
-		$db = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);		
-	} catch (PDOException $e) {
-		print "Error!: " . $e->getMessage() . "<br/>";
-		die();
-	}
+// Clear any existing session data
+session_unset();
+session_destroy();
 
-    $username=$_POST["username"];      //define variable $un and assign the username sent from the form
-    $password=$_POST["password"];    
+// Initialize a new session
+session_start();
 
-    $query="select ID from user where username='".$username."' AND password='".$password."'";
-    //echo $query;
-    $stmt=$db->query($query);
-    $rowCount=$stmt->rowCount();
-    echo $rowCount;
-    if ($rowCount>0){
-        session_start();
-        $row = $stmt->fetch();
-        $id=$row["id"];
-        $_SESSION["id"]=$id;
-        $_SESSION["username"]=$username;
+$dbhost = "127.0.0.1";
+$dbname = "bookingsystem";
+$dbuser = "root";
+$dbpass = "";
+
+try {
+    $db = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}
+
+$username = $_POST["username"];
+$password = $_POST["password"];
+
+$query = "SELECT ID FROM user WHERE username=:username AND password=:password";
+$stmt = $db->prepare($query);
+$stmt->bindParam(':username', $username);
+$stmt->bindParam(':password', $password);
+$stmt->execute();
+
+$rowCount = $stmt->rowCount();
+
+if ($rowCount > 0) {
+    $row = $stmt->fetch();
+    $id = $row["ID"];
+    $_SESSION["user_id"] = $id; // Changed 'id' to 'user_id' to match later checks
+    $_SESSION["username"] = $username;
+    if ($username=="admin"){
+        header("location:../BE/admin.php");
+    }
+    else{
         header("location:../front end/home.php");
-    }else{
-        header("location:../index.php");
-    }    
-    
+
+    }
+} else {
+    header("location:../index.php");
+}
+
+// Setting the language cookie
+setcookie("language", "en", time() + 3600);
 ?>

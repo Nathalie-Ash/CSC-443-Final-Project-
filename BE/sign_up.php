@@ -2,18 +2,14 @@
 
 require_once("var.php");
 
-
-
-
 $user=new stdClass();
 
 $user->fullname=VarExist($_POST["fullname"]);
 $user->username=VarExist($_POST["username"]);
 $user->email=VarExist($_POST["email"]);
-$user->password=VarExist($_POST["pass"]);
-// $user->sex=VarExist($_POST["sex"]);
+$user->password=VarExist($_POST["password"]); // Updated to match the form field name
 $user->age=VarExist($_POST["age"]);
-// $user->language=VarExist($_POST["language"]);
+
 
 if (InsertUserToDBfromObjet($user)){
     header("location:../front end/home.php");

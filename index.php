@@ -9,11 +9,7 @@ if (isset($_SESSION['user_id'])) {
 }
 
 setcookie("language", "en", time() + 3600);
-if (isset($_COOKIE["language"])) {
-    echo $_COOKIE["language"];
-} else {
-    echo "Language cookie doesn't exist";
-}
+
 ?>
 
 <!DOCTYPE html>

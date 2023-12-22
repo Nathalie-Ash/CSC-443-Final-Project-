@@ -1,4 +1,10 @@
 <?php require_once("common/menu.php"); ?>
+<?php
+    session_start();
+    if (!isset($_SESSION["username"])){
+        header("location:../index.php");
+    }
+?>
 <html>
 
 <head>
@@ -118,8 +124,13 @@
             </section>
     </div>
 
+
+
+    <!-- jQuery -->
     <script src="../backEnd/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
     <script src="../backEnd/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
     <script src="../backEnd/adminlte.min.js"></script>
     <script src="../backEnd/jquery-ui.min.js"></script>
 
